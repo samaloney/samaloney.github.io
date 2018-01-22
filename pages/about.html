@@ -1,31 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
 <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
+        <!-- Site Meta Data -->
         <title>About</title>
-        <link rel="stylesheet" href="https://samaloney.github.io/theme/css/main.css" />
-        <link href="https://samaloney.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="samaloney Atom Feed" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Shane Maloney">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        <link rel="shortcut icon" href="">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="samaloney">
+        <meta itemprop="image" content="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="https://samaloney.github.io/theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://samaloney.github.io/theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="https://samaloney.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="samaloney ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="samaloney">
+        <meta name="twitter:image" content="">
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://samaloney.github.io/">samaloney </a></h1>
-                <nav><ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="/category/blog.html">Blog</a></li>
-                    <li class="active"><a href="https://samaloney.github.io/pages/about.html">About</a></li>
-                    <li><a href="https://samaloney.github.io/pages/publications.html">Publications</a></li>
-                    <li><a href="https://samaloney.github.io/category/blog.html">Blog</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-    <h1 class="entry-title">About</h1>
-    
-    <p>I am a research fellow in the <a href="https://www.tcd.ie/Physics/research/themes/astrophysics/index.php">Astrophysics &amp; Space Physics</a> area working on solar physics. I originally studied experimental physics at <a href="https://www.ucd.ie">University College Dublin</a> with a heavy emphasis on mathematics and computer science. I received my PhD from <a href="https://www.tcd.ie">Trinity College Dublin</a> studying Coronal Mass Ejections using the twin vantage points of <a href="https://www.nasa.gov/mission_pages/stereo/main/index.html">NASA's STEREO Spacecraft</a>. After obtaining my PhD I decided to take a break from academia and took on a role as a software engineer at <a href="https://www.skytek.com">Skytek</a>. While at Skytek I learned about modern software development practices working on various projects in the aerospace and security sectors. Ultimately I decided to  return to a more research research role. I currently work on solar flares, using X-ray and gamma-ray imaging observations to understand the process that govern these massive releases of energy. I am part of the <a href="http://stix.i4ds.ch/mission/obtaining-data/">STIX</a> team, STIX is one of the 10 instruments making up <a href="http://sci.esa.int/solar-orbiter/">ESA Solar Orbiter mission</a> due for launch in 2019. Solar Orbiter will fly inside the orbit of Mercury and leave the ecliptic producing some novel observations and furthering our understanding of the Sun, our nearest Star, and its effect on us.</p>
+<body>
+<!-- Sidebar -->
+<aside>
+    <!--<center><a href="https://samaloney.github.io"><img id="avatar" src="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg"></a></center>-->
+    <h1>samaloney</h1>
+        <p>Solar Physics, Programming, Technology</p>
+    <br>
+
+        <a class="twitter-follow-button"
+           href="https://twitter.com/samaloney"
+           data-show-count="false"
+           data-lang="en">
+            Follow @twitterdev
+        </a>
+        <script type="text/javascript">
+            window.twttr = (function (d, s, id) {
+                var t, js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                return window.twttr || (t = {
+                        _e: [], ready: function (f) {
+                            t._e.push(f)
+                        }
+                    });
+            }(document, "script", "twitter-wjs"));
+        </script>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="">Home</a></li>
+                <li><a class="nav__link" href="/category/blog.html">Blog</a></li>
+
+                <li><a class="nav__link" href="https://samaloney.github.io/pages/about.html">About</a></li>
+                <li><a class="nav__link" href="https://samaloney.github.io/pages/publications.html">Publications</a></li>
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://www.linkedin.com/in/samaloney" target="_blank"><img
+                        src="https://samaloney.github.io/theme/images/icons/linkedin.png"></a>
+                <a href="https://github.com/samaloney" target="_blank"><img
+                        src="https://samaloney.github.io/theme/images/icons/github.png"></a>
+                <a href="https://twitter.com/samaloney" target="_blank"><img
+                        src="https://samaloney.github.io/theme/images/icons/twitter.png"></a>
+            <a href="https://samaloney.github.io/feeds/all.atom.xml" rel="alternate">
+                <img src="https://samaloney.github.io/theme/images/icons/rss.png"></a>
+    </p>
+
+        <h2>Categories</h2>
+        <ul class="navbar">
+                <li><a
+                        href="https://samaloney.github.io/category/blog.html">Blog</a></li>
+        </ul>
+
+        <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
+        <ul class="navbar">
+                <li><a href="http://getpelican.com/">Pelican</a></li>
+                <li><a href="http://python.org/">Python.org</a></li>
+                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                <li><a href="#">You can modify those links in your config file</a></li>
+        </ul>
+
+</aside>
+
+<!-- Content -->
+<article>
+    <section id="content" class="body">
+
+        <p>I am a research fellow in the <a href="https://www.tcd.ie/Physics/research/themes/astrophysics/index.php">Astrophysics &amp; Space Physics</a> area working on solar physics. I originally studied experimental physics at <a href="https://www.ucd.ie">University College Dublin</a> with a heavy emphasis on mathematics and computer science. I received my PhD from <a href="https://www.tcd.ie">Trinity College Dublin</a> studying Coronal Mass Ejections using the twin vantage points of <a href="https://www.nasa.gov/mission_pages/stereo/main/index.html">NASA's STEREO Spacecraft</a>. After obtaining my PhD I decided to take a break from academia and took on a role as a software engineer at <a href="https://www.skytek.com">Skytek</a>. While at Skytek I learned about modern software development practices working on various projects in the aerospace and security sectors. Ultimately I decided to  return to a more research research role. I currently work on solar flares, using X-ray and gamma-ray imaging observations to understand the process that govern these massive releases of energy. I am part of the <a href="http://stix.i4ds.ch/mission/obtaining-data/">STIX</a> team, STIX is one of the 10 instruments making up <a href="http://sci.esa.int/solar-orbiter/">ESA Solar Orbiter mission</a> due for launch in 2019. Solar Orbiter will fly inside the orbit of Mercury and leave the ecliptic producing some novel observations and furthering our understanding of the Sun, our nearest Star, and its effect on us.</p>
 <h2>Current Projects</h2>
 <p><img style="float:left; border-right:10px solid white" src="images/stix.png" alt="photo"/>
 <strong>STIX (Spectrometer / Telescope for Imaging X-Rays)</strong> STIX will take X-ray observations of the sun from 4-150 keV at a maximum rate of 0.1 s. As part of the STIX team I am involved in number of aspects the project. Developing the ground software to process quick look and house keeping data as well as process and store science data in an archive. Developing the analysis software other researchers will use once STIX is operational. During the cruise phase STIX will return data for calibration and testing purposes which will need to analysed and updates sent to to the instrument. Finally once operational I will be analysing the science data for new insights into flare physics.</p>
@@ -55,36 +133,19 @@ REACT
 AITS
 
 FOREST -->
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://samaloney.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+    </section>
+</article>
 
-                            <li><a href="https://www.linkedin.com/in/samaloney">linkedin</a></li>
-                            <li><a href="https://github.com/samaloney">github</a></li>
-                            <li><a href="https://twitter.com/samaloney">twitter</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+<!-- Footer -->
+    <footer>
+        <p>
+            Blog powered by <a href="http://getpelican.com/">Pelican</a>,
+            which takes great advantage of <a href="http://python.org">Python</a>.
+            Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a
+                href="https://parbhatpuri.com/">@parbhat</a>.
+        </p>
+    </footer>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
 
 </body>
 </html>
