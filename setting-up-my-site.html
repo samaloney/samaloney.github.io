@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Setting Up My Site</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Shane Maloney">
+
+        <link rel="shortcut icon" href="">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="samaloney">
+        <meta itemprop="image" content="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="samaloney.github.io/theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="samaloney.github.io/theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="samaloney.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="samaloney ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="samaloney">
+        <meta name="twitter:image" content="">
+
+    <meta name="twitter:creator" content="samaloney">
+    <meta name="twitter:url" content="samaloney.github.io/setting-up-my-site.html">
+    <meta name="twitter:title" content="samaloney ~ Setting Up My Site">
+    <meta name="twitter:description" content="Creating my personal website.">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="samaloney ~ Setting Up My Site"/>
+    <meta property="og:description" content="Creating my personal website."/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <!--<center><a href="samaloney.github.io"><img id="avatar" src="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg"></a></center>-->
+    <h1>samaloney</h1>
+        <p>Solar Physics, Programming, Technology</p>
+    <br>
+
+        <a class="twitter-follow-button"
+           href="https://twitter.com/samaloney"
+           data-show-count="false"
+           data-lang="en">
+            Follow @twitterdev
+        </a>
+        <script type="text/javascript">
+            window.twttr = (function (d, s, id) {
+                var t, js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                return window.twttr || (t = {
+                        _e: [], ready: function (f) {
+                            t._e.push(f)
+                        }
+                    });
+            }(document, "script", "twitter-wjs"));
+        </script>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="http://127.0.0.1:8000">Home</a></li>
+                <li><a class="nav__link" href="http://127.0.0.1:8000/category/blog.html">Blog</a></li>
+
+                <li><a class="nav__link" href="samaloney.github.io/pages/about.html">About</a></li>
+                <li><a class="nav__link" href="samaloney.github.io/pages/publications.html">Publications</a></li>
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://www.linkedin.com/in/samaloney" target="_blank"><img
+                        src="samaloney.github.io/theme/images/icons/linkedin.png"></a>
+                <a href="https://github.com/samaloney" target="_blank"><img
+                        src="samaloney.github.io/theme/images/icons/github.png"></a>
+                <a href="https://twitter.com/samaloney" target="_blank"><img
+                        src="samaloney.github.io/theme/images/icons/twitter.png"></a>
+            <a href="samaloney.github.io/feeds/all.atom.xml" rel="alternate">
+                <img src="samaloney.github.io/theme/images/icons/rss.png"></a>
+    </p>
+
+        <h2>Categories</h2>
+        <ul class="navbar">
+                <li class="active"><a
+                        href="samaloney.github.io/category/blog.html">Blog</a></li>
+        </ul>
+
+        <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
+        <ul class="navbar">
+                <li><a href="http://getpelican.com/">Pelican</a></li>
+                <li><a href="http://python.org/">Python.org</a></li>
+                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                <li><a href="#">You can modify those links in your config file</a></li>
+        </ul>
+
+</aside>
+
+<!-- Content -->
+<article>
+    <section id="content">
+        <article>
+            <h2 class="post_title post_detail"><a href="samaloney.github.io/setting-up-my-site.html" rel="bookmark"
+                                                  title="Permalink to Setting Up My Site">Setting Up My Site</a></h2>
+            <div class="entry-content blog-post">
+                <h2>Preamble</h2>
+<p>I've been putting off setting up a personal website for far too long. In the past I've looked at various options for creating a personal site such as, <a href="https://www.wordpress.org">WordPress</a>, <a href="https://jekyllrb.com">Jekyll</a>, <a href="https://gohugo.io">Hugo</a> but none of them really seemed to suite my needs.</p>
+<p>WordPress is great and I'm familiar with using it however, it seems a bit of overkill for my purposes. I don't really need dynamic server side functions and I would have to host it somewhere, not a big deal by why bother when it's not necessary.As I don't need any dynamic content I decided to look at static site generators. Also static sites can be hosted on GitHub via <a href="https://pages.github.com">GitHub pages</a>, one less thing to manage.</p>
+<p>Jekyll seems to be one of the most popular and well supported, it has lots of nice themes, plugins and is even integrated with GitHub pages. However it is written in <a href="https://www.ruby-lang.org/en/">Ruby</a>, which I'm not too familiar with same goes for its template language <a href="https://shopify.github.io/liquid/">Liquid</a>. Next up Hugo another very popular static site generator with good support and lots of nice themes. Hugo is written in Go, which I'm not that familiar with, or Go's template system.</p>
+<p>Enter <a href="https://blog.getpelican.com">Pelican</a> a python based static site generator which uses <a href="http://jinja.pocoo.org">Jina template</a> language which I know from working with Django. Pelican doesn't seem to have as large a community as either Jekyll or Hugo buy it also seem to be a little less complex. In the end I've chosen to use Pelican for a number of reasons:</p>
+<ol>
+<li>Python based with Jina templates</li>
+<li>Easy integration with GitHub pages</li>
+<li>Smaller community but seems a bit less complex so will be easier to hack</li>
+</ol>
+<h2>Lets go!</h2>
+<p>So my first step was to create a isolated environment (pyenv and virtualenv) and get Pelican installed</p>
+<div class="highlight"><pre><span></span>mkproject -python3 samloney.com
+pip install pelican
+pelican-quickstart
+</pre></div>
+
+
+<p>At this point I could begin to add content look for a theme. As for a theme I wanted something responsive, minimal, looked good on mobile or desktops, and would be easy to modify. I quickly found <a href="https://github.com/Parbhat/pelican-blue">pelican-blue</a> by <a href="https://github.com/Parbhat">Parbhat Puri</a> which looked good but I knew I would need to make some modifications so I forked the repo <a href="https://github.com/samaloney/pelican-blue">here</a></p>
+<p>Next I wanted to add a list of my publications to the site, I could have done this by hand but this seemed like a job to automate. After some initial searching I came across a Pelican plugin called <a href="https://github.com/adamreeve/pelican_publications">pelican_publications</a> that seemed like it would do the job. It would take a <code>.bib</code> file, parse it and return the contents to a template. After a quick install it became apparent that I would need to create the template.</p>
+<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
+    <span class="nt">&lt;ul&gt;</span>
+    <span class="cp">{%</span> <span class="k">for</span> <span class="nv">pub</span> <span class="k">in</span> <span class="nv">publications</span> <span class="cp">%}</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="cp">{%</span> <span class="k">for</span> <span class="nv">author</span> <span class="k">in</span> <span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;author&#39;</span><span class="o">]</span><span class="cp">%}</span>
+                <span class="cp">{{</span><span class="s1">&#39; &#39;</span><span class="nv">.join</span><span class="o">(</span><span class="nv">author</span><span class="o">)</span><span class="nv">.replace</span><span class="o">(</span><span class="s1">&#39;~&#39;</span><span class="o">,</span> <span class="s1">&#39; &#39;</span><span class="o">)</span><span class="cp">}}</span>, 
+            <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+            <span class="nt">&lt;em&gt;</span><span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;title&#39;</span><span class="o">]</span><span class="cp">}}</span><span class="nt">&lt;/em&gt;</span>, 
+            <span class="cp">{%</span> <span class="k">if</span> <span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;journal&#39;</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;\\aap&#39;</span> <span class="cp">%}</span>
+                A<span class="err">&amp;</span>A, 
+            <span class="cp">{%</span> <span class="k">elif</span> <span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;journal&#39;</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;\\solphys&#39;</span> <span class="cp">%}</span>
+                Sol. Phys., 
+            <span class="cp">{%</span> <span class="k">elif</span> <span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;journal&#39;</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;\\apjl&#39;</span> <span class="cp">%}</span>
+                ApJL
+            <span class="cp">{%</span> <span class="k">else</span><span class="cp">%}</span>
+                <span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;journal&#39;</span><span class="o">]</span><span class="cp">}}</span>
+            <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+            <span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;year&#39;</span><span class="o">]</span><span class="cp">}}</span>, 
+            <span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;month&#39;</span><span class="o">]</span><span class="nv">.capitalize</span><span class="o">()</span><span class="cp">}}</span>, 
+            <span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;volume&#39;</span><span class="o">]</span><span class="cp">}}</span>, 
+            P <span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;pages&#39;</span><span class="o">]</span><span class="cp">}}</span>,
+            <span class="cp">{%</span> <span class="k">if</span> <span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;eprint&#39;</span><span class="o">]</span> <span class="cp">%}</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://arxiv.org/abs/</span><span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;eprint&#39;</span><span class="o">]</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>arXiv<span class="nt">&lt;/a&gt;</span>,
+            <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+            <span class="cp">{%</span> <span class="k">if</span> <span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;doi&#39;</span><span class="o">]</span> <span class="cp">%}</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://doi.org/</span><span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;doi&#39;</span><span class="o">]</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>DOI<span class="nt">&lt;/a&gt;</span>,
+            <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+            <span class="cp">{%</span> <span class="k">if</span> <span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;adsurl&#39;</span><span class="o">]</span> <span class="cp">%}</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">pub</span><span class="o">[</span><span class="s1">&#39;adsurl&#39;</span><span class="o">]</span><span class="cp">}}</span><span class="s">&quot;</span><span class="nt">&gt;</span>ADS<span class="nt">&lt;/a&gt;</span>
+            <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</pre></div>
+
+
+<p>It turned out the the pelican_publications plugin didn't quite do what I expected/wanted which made the template more complicated then I wanted, a task for the future, it was good enough for the moment.</p>
+            </div>
+            <div class="post_list">
+                <span>By </span>
+                <a href="samaloney.github.io/author/shane-maloney.html">@Shane Maloney</a>
+                <span> in </span>
+                <span class="post_category"><a href="samaloney.github.io/category/blog.html" rel="bookmark"
+                                               title="Permalink to Blog">[ Blog ]</a></span>
+                <span class="post_date">Sun 21 January 2018</span>
+                <div><span>Tags : </span>
+                            <span><a href="samaloney.github.io/tag/pelican.html">#pelican, </a></span>
+                            <span><a href="samaloney.github.io/tag/publishing.html">#publishing, </a></span>
+                </div>
+
+                <div class="entry-social">
+                    <span class="twitter"><a target="_blank" rel="nofollow"
+                                             onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
+                                             title="Twitter"
+                                             href="https://twitter.com/share?url=samaloney.github.io/setting-up-my-site.html&text=Setting Up My Site&via=samaloney"><img
+                            src="samaloney.github.io/theme/images/icons/twitter-s.png"></a></span>
+
+                    <span class="gplus"><a target="_blank" title="Google +"
+                                           href="https://plus.google.com/share?url=samaloney.github.io/setting-up-my-site.html&hl=fr"
+                                           rel="nofollow"
+                                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
+                            src="samaloney.github.io/theme/images/icons/google-s.png"></a></span>
+
+                    <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
+                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
+                                              href="https://www.facebook.com/sharer.php?u=samaloney.github.io/setting-up-my-site.html&t=Setting Up My Site"><img
+                            src="samaloney.github.io/theme/images/icons/facebook-s.png"></a></span>
+
+                    <a target="_blank" title="Linkedin"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=samaloney.github.io/setting-up-my-site.html&title=Setting Up My Site"
+                       rel="nofollow"
+                       onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
+                            src="samaloney.github.io/theme/images/icons/linkedin-s.png"></a>
+
+                    <span class="mail"><a
+                            href="mailto:?subject=Setting Up My Site&amp;body=Viens découvrir un article à propos de [Setting Up My Site] sur le site de Shane Maloney. samaloney.github.io/setting-up-my-site.html"
+                            title="Share by Email" target="_blank"><img
+                            src="samaloney.github.io/theme/images/icons/mail-s.png"></a></span>
+                </div>
+            </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+    <footer>
+        <p>
+            Blog powered by <a href="http://getpelican.com/">Pelican</a>,
+            which takes great advantage of <a href="http://python.org">Python</a>.
+            Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a
+                href="https://parbhatpuri.com/">@parbhat</a>.
+        </p>
+    </footer>
+
+
+</body>
+</html>
