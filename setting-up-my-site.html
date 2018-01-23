@@ -43,7 +43,7 @@
 <body>
 <!-- Sidebar -->
 <aside>
-    <!--<center><a href="https://samaloney.github.io"><img id="avatar" src="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg"></a></center>-->
+    <center><a href="https://samaloney.github.io"><img id="avatar" src="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg"></a></center>
     <h1>samaloney</h1>
         <p>Solar Physics, Programming, Technology</p>
     <br>
@@ -101,10 +101,9 @@
 
         <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
         <ul class="navbar">
-                <li><a href="http://getpelican.com/">Pelican</a></li>
-                <li><a href="http://python.org/">Python.org</a></li>
-                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                <li><a href="#">You can modify those links in your config file</a></li>
+                <li><a href="http://sunpy.org/">SunPy</a></li>
+                <li><a href="http://github.com/sunpy/xrayvision">xrayvision</a></li>
+                <li><a href="http://www.tcd.ie/Physics/research/themes/astrophysics/">TCD Astro</a></li>
         </ul>
 
 </aside>
@@ -174,6 +173,26 @@ pelican-quickstart
 
 
 <p>It turned out the the pelican_publications plugin didn't quite do what I expected/wanted which made the template more complicated then I wanted, a task for the future, it was good enough for the moment.</p>
+<h2>Time to Publish</h2>
+<p>At this point I figured I might as well try publishing what I had so far so I created a repo with the correct name following the GitHub pages <a href="https://pages.github.com">instructions</a>. I ran <code>make publish</code> which runs pelican with <code>pelicanconf.py</code> and additionally <code>publishconf.py</code> where I set the site name to my github pages url. As suggested in the pelican doc I had installed ghp-import so all I had to do was</p>
+<div class="highlight"><pre><span></span>ghp-import &lt;path&gt;/&lt;to&gt;/output
+git push orgin gh-pages
+</pre></div>
+
+
+<p>and it didn't work a quick review of the GitHub Pages docs seem to indicate user pagaes now had to be in the master branch. Second try</p>
+<div class="highlight"><pre><span></span>ghp-import -b master &lt;path&gt;/&lt;to&gt;/output
+git push orgin master
+</pre></div>
+
+
+<p>it worked will kind of, the home page seemed ok, missing some css but every other page was borked. A quick review of browser console indicated issues serving mixed content (http, https) and the links were not being generated correctly. After a bit of playing around I found the causes:</p>
+<ol>
+<li>RTFM - from pelican docs <code>SITEURL</code> must be full URL with protocol</li>
+<li>Also with the theme I was using <code>SITEURL</code> had at the start of <code>pelicanconf.py</code> and didn't work when set in <code>publishconf.py</code></li>
+</ol>
+<p>Success!</p>
+<p>The code for the site at this stage can be found <a href="">here</a></p>
             </div>
             <div class="post_list">
                 <span>By </span>
@@ -222,14 +241,6 @@ pelican-quickstart
 </article>
 
 <!-- Footer -->
-    <footer>
-        <p>
-            Blog powered by <a href="http://getpelican.com/">Pelican</a>,
-            which takes great advantage of <a href="http://python.org">Python</a>.
-            Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a
-                href="https://parbhatpuri.com/">@parbhat</a>.
-        </p>
-    </footer>
 
 
 </body>

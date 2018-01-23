@@ -56,4 +56,24 @@ pelican-quickstart
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;It turned out the the pelican_publications plugin didn't quite do what I expected/wanted which made the template more complicated then I wanted, a task for the future, it was good enough for the moment.&lt;/p&gt;</content><category term="pelican"></category><category term="publishing"></category></entry></feed>
+&lt;p&gt;It turned out the the pelican_publications plugin didn't quite do what I expected/wanted which made the template more complicated then I wanted, a task for the future, it was good enough for the moment.&lt;/p&gt;
+&lt;h2&gt;Time to Publish&lt;/h2&gt;
+&lt;p&gt;At this point I figured I might as well try publishing what I had so far so I created a repo with the correct name following the GitHub pages &lt;a href="https://pages.github.com"&gt;instructions&lt;/a&gt;. I ran &lt;code&gt;make publish&lt;/code&gt; which runs pelican with &lt;code&gt;pelicanconf.py&lt;/code&gt; and additionally &lt;code&gt;publishconf.py&lt;/code&gt; where I set the site name to my github pages url. As suggested in the pelican doc I had installed ghp-import so all I had to do was&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghp-import &amp;lt;path&amp;gt;/&amp;lt;to&amp;gt;/output
+git push orgin gh-pages
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and it didn't work a quick review of the GitHub Pages docs seem to indicate user pagaes now had to be in the master branch. Second try&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ghp-import -b master &amp;lt;path&amp;gt;/&amp;lt;to&amp;gt;/output
+git push orgin master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;it worked will kind of, the home page seemed ok, missing some css but every other page was borked. A quick review of browser console indicated issues serving mixed content (http, https) and the links were not being generated correctly. After a bit of playing around I found the causes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RTFM - from pelican docs &lt;code&gt;SITEURL&lt;/code&gt; must be full URL with protocol&lt;/li&gt;
+&lt;li&gt;Also with the theme I was using &lt;code&gt;SITEURL&lt;/code&gt; had at the start of &lt;code&gt;pelicanconf.py&lt;/code&gt; and didn't work when set in &lt;code&gt;publishconf.py&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Success!&lt;/p&gt;
+&lt;p&gt;The code for the site at this stage can be found &lt;a href=""&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category><category term="publishing"></category></entry></feed>
