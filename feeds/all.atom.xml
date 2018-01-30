@@ -76,4 +76,80 @@ git push orgin master
 &lt;li&gt;Also with the theme I was using &lt;code&gt;SITEURL&lt;/code&gt; had at the start of &lt;code&gt;pelicanconf.py&lt;/code&gt; and didn't work when set in &lt;code&gt;publishconf.py&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Success!&lt;/p&gt;
-&lt;p&gt;The code for the site at this stage can be found &lt;a href=""&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category><category term="publishing"></category></entry></feed>
+&lt;p&gt;The code for the site at this stage can be found &lt;a href=""&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category><category term="publishing"></category></entry><entry><title>Get OS X Mail to sort Exchange Folders Alphabetically</title><link href="http://samaloney.com/get-os-x-mail-to-sort-exchange-folders-alphabetically.html" rel="alternate"></link><published>2016-11-14T09:30:00+00:00</published><updated>2016-11-14T09:30:00+00:00</updated><author><name>Shane Maloney</name></author><id>tag:samaloney.com,2016-11-14:/get-os-x-mail-to-sort-exchange-folders-alphabetically.html</id><summary type="html">&lt;p&gt;Sort Exchange folder alphabetically in OS X Mail&lt;/p&gt;</summary><content type="html">&lt;p&gt;Original source &lt;a href="https://discussions.apple.com/message/11157240#11157240"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Newly created folders are not sorted alphabetically to sort this out:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Quit Mail app&lt;/li&gt;
+&lt;li&gt;Run the following command in a terminal 
+&lt;code&gt;cp /Users/&amp;lt;username&amp;gt;/Library/Mail/V3/&amp;lt;mailbox&amp;gt;/.mboxCache.plist{,.bck}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Restart Mail check if folder are displaying correctly and all working.&lt;/li&gt;
+&lt;li&gt;Remove &lt;code&gt;.bck&lt;/code&gt; file&lt;/li&gt;
+&lt;/ol&gt;</content><category term="osx"></category><category term="mail"></category><category term="exchange"></category></entry><entry><title>Fix error when plotting from IDL 8.5</title><link href="http://samaloney.com/fix-error-when-plotting-from-idl-85.html" rel="alternate"></link><published>2016-11-13T22:00:00+00:00</published><updated>2016-11-13T22:00:00+00:00</updated><author><name>Shane Maloney</name></author><id>tag:samaloney.com,2016-11-13:/fix-error-when-plotting-from-idl-85.html</id><summary type="html">&lt;p&gt;Fixing issue IDL 8.5 issue with XQuartz 2.7&lt;/p&gt;</summary><content type="html">&lt;p&gt;Originally from &lt;a href="http://blogs.qub.ac.uk/screenshotsfromtheedge/2016/10/25/xquartz-2-7-10-and-libxt-motif-idl/"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Issue when trying to plot from IDL 8.5 running XQuarts 2.7 the follow error occurs&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;attempt&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;non&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt; &lt;span class="n"&gt;child&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;dsm&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;parent&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;idl&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;which&lt;/span&gt; &lt;span class="n"&gt;supports&lt;/span&gt; &lt;span class="n"&gt;only&lt;/span&gt; &lt;span class="n"&gt;widgets&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A workaround is to alter the idl and idlde scripts making sure the DYLD_LIBRARY_PATH environment variable includes the directory /opt/X11/lib/flat_namespace/&lt;/p&gt;
+&lt;p&gt;So at around line 245 in idl &lt;code&gt;/Applications/exelis/idl85/bin/idl&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$DYLD_LIBRARY_PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nv"&gt;DYLD_LIBRARY_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/opt/X11/lib/flat_namespace:&lt;/span&gt;&lt;span class="nv"&gt;$BIN_DIR&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="c1"&gt;#DYLD_LIBRARY_PATH=&amp;quot;$BIN_DIR&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nv"&gt;DYLD_LIBRARY_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/opt/X11/lib/flat_namespace:&lt;/span&gt;&lt;span class="nv"&gt;$BIN_DIR&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;$DYLD_LIBRARY_PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="c1"&gt;#DYLD_LIBRARY_PATH=&amp;quot;$BIN_DIR:$DYLD_LIBRARY_PATH&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and in idlde &lt;code&gt;/Applications/exelis/idl85/bin/idlde&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$APPLICATION&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;idlde&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="c1"&gt;# add bindir for idlde shareable libraries&lt;/span&gt;
+    &lt;span class="c1"&gt;#DYLD_LIBRARY_PATH=&amp;quot;$BIN_DIR_IDLDE:$DYLD_LIBRARY_PATH&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;DYLD_LIBRARY_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/opt/X11/lib/flat_namespace:&lt;/span&gt;&lt;span class="nv"&gt;$BIN_DIR_IDLDE&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;$DYLD_LIBRARY_PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;IDL_START_DIR_DARWIN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
+    &lt;span class="nb"&gt;export&lt;/span&gt; IDL_START_DIR_DARWIN
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;also see XQartz release &lt;a href="https://www.xquartz.org/releases/bare/XQuartz-2.7.10_rc5.html"&gt;notes&lt;/a&gt;&lt;/p&gt;</content><category term="osx"></category><category term="idl"></category><category term="x11"></category></entry><entry><title>Automatically route VPN traffic (split tunnelling)</title><link href="http://samaloney.com/automatically-route-vpn-traffic-split-tunnelling.html" rel="alternate"></link><published>2016-03-26T10:52:49+00:00</published><updated>2016-03-26T10:52:49+00:00</updated><author><name>Shane Maloney</name></author><id>tag:samaloney.com,2016-03-26:/automatically-route-vpn-traffic-split-tunnelling.html</id><summary type="html">&lt;p&gt;Route traffic over VPN based on destination IP&lt;/p&gt;</summary><content type="html">&lt;p&gt;When using VPNs to access remote systems I often need to access local network resources as well additional so remote systems do not have internet access. A pretty simple solution is to create a specific routes when the VPN is created. As the most specific route is used only traffic for this network will be forwarded over the VPN tunnel, the rest will use the default route. The &lt;code&gt;if-up&lt;/code&gt; and &lt;code&gt;if-down&lt;/code&gt; scripts located at &lt;code&gt;/etc/ppp/&lt;/code&gt; are called with when a ppp conection is created or ended. The following arguments: &lt;code&gt;interface-name, tty-device, speed, local-IP-address, remote-IP-address, ipparam&lt;/code&gt; are passed to these scripts so we can use these to add/remove specific rules for specify networks.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#/etc/ppp/if-up&lt;/span&gt;
+
+&lt;span class="c1"&gt;#!/bin/evn bash&lt;/span&gt;
+
+&lt;span class="nv"&gt;IFNAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;1&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;LOCALIP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;4&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;REMOTEIP&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;5&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;REMOTEIP&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;192.0.2.1&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+  /sbin/route add -host lab_computer.foo -interface &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;IFNAME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#/etc/ppp/if-down
+
+#!/bin/env bash
+
+IFNAME=&amp;quot;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;&amp;quot;
+LOCALIP=&amp;quot;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;&amp;quot;
+REMOTEIP=&amp;quot;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;&amp;quot;
+
+if [[ &amp;quot;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;REMOTEIP&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;&amp;quot; == &amp;quot;192.0.2.1&amp;quot; ]]; then
+  /sbin/route delete -host lab_computer.foo -interface &amp;quot;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;IFNAME&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;&amp;quot;
+fi
+&lt;/pre&gt;&lt;/div&gt;</content><category term="osx"></category><category term="linux"></category><category term="networking"></category><category term="vpn"></category></entry><entry><title>Add aliases to OS X Mail Exchange Accounts</title><link href="http://samaloney.com/add-aliases-to-os-x-mail-exchange-accounts.html" rel="alternate"></link><published>2010-12-03T10:20:00+00:00</published><updated>2010-12-03T10:20:00+00:00</updated><author><name>Shane Maloney</name></author><id>tag:samaloney.com,2010-12-03:/add-aliases-to-os-x-mail-exchange-accounts.html</id><summary type="html">&lt;p&gt;Fixing issue IDL 8.5 issue with XQuartz 2.7&lt;/p&gt;</summary><content type="html">&lt;p&gt;Issue can not add alias to Exhange accouns in OS X Mail (9.3)&lt;/p&gt;
+&lt;p&gt;Originally take from &lt;a href="https://codeisgreen.net/blog/2015/10/03/el-capitan-and-exchange-aliases-solution/"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Solution is to change outgoing mail server to none&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;In OSX Mail, select Mail -&amp;gt; Preferences.&lt;/li&gt;
+&lt;li&gt;Highlight your Exchange account from the list on the left.&lt;/li&gt;
+&lt;li&gt;Make sure the Account Information tab is selected in the right panel and look for the Alias dropdown.&lt;/li&gt;
+&lt;li&gt;The alias dropdown may be greyed out (it was for me) so, if it is, go to the Outgoing Mail Server dropdown and change it to none.&lt;/li&gt;
+&lt;li&gt;Close down that panel (or select another mail account from the left menu if you have one) to force it to save. It should ask you if you want to save settings.&lt;/li&gt;
+&lt;li&gt;Go back into that panel and you should find the Alias dropdown is no longer greyed out, so click the dropdown box and then select Edit Aliases.&lt;/li&gt;
+&lt;li&gt;You can now use the + and – buttons to add any aliases you want.&lt;/li&gt;
+&lt;li&gt;When you’ve added all your aliases, before you exit, change the Outgoing Mail Server entry back to Exchange.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That’s it. You shouldn’t even need to reboot the mail app. Your aliases should now be available to select via the ‘From‘ dropdown when you create or reply to a mail message.&lt;/p&gt;</content><category term="osx"></category><category term="mail"></category><category term="exchange"></category></entry></feed>

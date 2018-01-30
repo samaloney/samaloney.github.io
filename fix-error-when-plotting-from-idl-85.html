@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
+<head>
+            <meta charset="utf-8">
+        <!-- Site Meta Data -->
+        <title>Fix error when plotting from IDL 8.5</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Shane Maloney">
+
+        <link rel="shortcut icon" href="">
+
+        <!-- schema.org -->
+        <meta itemprop="name" content="samaloney">
+        <meta itemprop="image" content="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg">
+        <meta itemprop="description" content="">
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <!-- Style Meta Data -->
+        <link rel="stylesheet" href="http://samaloney.com/theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="http://samaloney.com/theme/css/pygments.css" type="text/css"/>
+
+        <!-- Feed Meta Data -->
+            <link href="http://samaloney.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+                  title="samaloney ATOM Feed"/>
+
+        <!-- Twitter Feed -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="samaloney">
+        <meta name="twitter:image" content="">
+
+    <meta name="twitter:creator" content="samaloney">
+    <meta name="twitter:url" content="http://samaloney.com/fix-error-when-plotting-from-idl-85.html">
+    <meta name="twitter:title" content="samaloney ~ Fix error when plotting from IDL 8.5">
+    <meta name="twitter:description" content="Fixing issue IDL 8.5 issue with XQuartz 2.7">
+
+    <!-- Facebook Meta Data -->
+    <meta property="og:title" content="samaloney ~ Fix error when plotting from IDL 8.5"/>
+    <meta property="og:description" content="Fixing issue IDL 8.5 issue with XQuartz 2.7"/>
+    <meta property="og:image" content=""/>
+</head>
+
+<body>
+<!-- Sidebar -->
+<aside>
+    <center><a href="http://samaloney.com"><img id="avatar" src="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg"></a></center>
+    <h1>samaloney</h1>
+        <p>Solar Physics, Programming, Technology</p>
+    <br>
+
+        <a class="twitter-follow-button"
+           href="https://twitter.com/samaloney"
+           data-show-count="false"
+           data-lang="en">
+            Follow @twitterdev
+        </a>
+        <script type="text/javascript">
+            window.twttr = (function (d, s, id) {
+                var t, js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                return window.twttr || (t = {
+                        _e: [], ready: function (f) {
+                            t._e.push(f)
+                        }
+                    });
+            }(document, "script", "twitter-wjs"));
+        </script>
+
+    <nav class="nav">
+        <ul class="list-bare">
+
+                <li><a class="nav__link" href="http://samaloney.com">Home</a></li>
+                <li><a class="nav__link" href="http://samaloney.com/category/blog.html">Blog</a></li>
+
+                <li><a class="nav__link" href="http://samaloney.com/pages/about.html">About</a></li>
+                <li><a class="nav__link" href="http://samaloney.com/pages/publications.html">Publications</a></li>
+
+        </ul>
+    </nav>
+
+    <p class="social">
+                <a href="https://www.linkedin.com/in/samaloney" target="_blank"><img
+                        src="http://samaloney.com/theme/images/icons/linkedin.png"></a>
+                <a href="https://github.com/samaloney" target="_blank"><img
+                        src="http://samaloney.com/theme/images/icons/github.png"></a>
+                <a href="https://twitter.com/samaloney" target="_blank"><img
+                        src="http://samaloney.com/theme/images/icons/twitter.png"></a>
+            <a href="http://samaloney.com/feeds/all.atom.xml" rel="alternate">
+                <img src="http://samaloney.com/theme/images/icons/rss.png"></a>
+    </p>
+
+        <h2>Categories</h2>
+        <ul class="navbar">
+                <li><a
+                        href="http://samaloney.com/category/blog.html">Blog</a></li>
+                <li class="active"><a
+                        href="http://samaloney.com/category/how-to.html">How To</a></li>
+        </ul>
+
+        <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
+        <ul class="navbar">
+                <li><a href="http://sunpy.org/">SunPy</a></li>
+                <li><a href="http://github.com/sunpy/xrayvision">xrayvision</a></li>
+                <li><a href="http://www.tcd.ie/Physics/research/themes/astrophysics/">TCD Astro</a></li>
+        </ul>
+
+</aside>
+
+<!-- Content -->
+<article>
+    <section id="content">
+        <article>
+            <h2 class="post_title post_detail"><a href="http://samaloney.com/fix-error-when-plotting-from-idl-85.html" rel="bookmark"
+                                                  title="Permalink to Fix error when plotting from IDL 8.5">Fix error when plotting from IDL 8.5</a></h2>
+            <div class="entry-content blog-post">
+                <p>Originally from <a href="http://blogs.qub.ac.uk/screenshotsfromtheedge/2016/10/25/xquartz-2-7-10-and-libxt-motif-idl/">here</a></p>
+<p>Issue when trying to plot from IDL 8.5 running XQuarts 2.7 the follow error occurs</p>
+<div class="highlight"><pre><span></span><span class="n">Error</span><span class="o">:</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">add</span> <span class="n">non</span><span class="o">-</span><span class="n">widget</span> <span class="n">child</span> <span class="s2">&quot;dsm&quot;</span> <span class="n">to</span> <span class="n">parent</span> <span class="s2">&quot;idl&quot;</span> <span class="n">which</span> <span class="n">supports</span> <span class="n">only</span> <span class="n">widgets</span>
+</pre></div>
+
+
+<p>A workaround is to alter the idl and idlde scripts making sure the DYLD_LIBRARY_PATH environment variable includes the directory /opt/X11/lib/flat_namespace/</p>
+<p>So at around line 245 in idl <code>/Applications/exelis/idl85/bin/idl</code></p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$DYLD_LIBRARY_PATH</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">DYLD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;/opt/X11/lib/flat_namespace:</span><span class="nv">$BIN_DIR</span><span class="s2">&quot;</span>
+    <span class="c1">#DYLD_LIBRARY_PATH=&quot;$BIN_DIR&quot;</span>
+<span class="k">else</span>
+    <span class="nv">DYLD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;/opt/X11/lib/flat_namespace:</span><span class="nv">$BIN_DIR</span><span class="s2">:</span><span class="nv">$DYLD_LIBRARY_PATH</span><span class="s2">&quot;</span>
+    <span class="c1">#DYLD_LIBRARY_PATH=&quot;$BIN_DIR:$DYLD_LIBRARY_PATH&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+
+
+<p>and in idlde <code>/Applications/exelis/idl85/bin/idlde</code></p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$APPLICATION</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;idlde&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="c1"># add bindir for idlde shareable libraries</span>
+    <span class="c1">#DYLD_LIBRARY_PATH=&quot;$BIN_DIR_IDLDE:$DYLD_LIBRARY_PATH&quot;</span>
+    <span class="nv">DYLD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;/opt/X11/lib/flat_namespace:</span><span class="nv">$BIN_DIR_IDLDE</span><span class="s2">:</span><span class="nv">$DYLD_LIBRARY_PATH</span><span class="s2">&quot;</span>
+    <span class="nv">IDL_START_DIR_DARWIN</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+    <span class="nb">export</span> IDL_START_DIR_DARWIN
+<span class="k">fi</span>
+</pre></div>
+
+
+<p>also see XQartz release <a href="https://www.xquartz.org/releases/bare/XQuartz-2.7.10_rc5.html">notes</a></p>
+            </div>
+            <div class="post_list">
+                <span>By </span>
+                <a href="http://samaloney.com/author/shane-maloney.html">@Shane Maloney</a>
+                <span> in </span>
+                <span class="post_category"><a href="http://samaloney.com/category/how-to.html" rel="bookmark"
+                                               title="Permalink to How To">[ How To ]</a></span>
+                <span class="post_date">Sun 13 November 2016</span>
+                <div><span>Tags : </span>
+                            <span><a href="http://samaloney.com/tag/osx.html">#osx, </a></span>
+                            <span><a href="http://samaloney.com/tag/idl.html">#idl, </a></span>
+                            <span><a href="http://samaloney.com/tag/x11.html">#x11, </a></span>
+                </div>
+
+                <div class="entry-social">
+                    <span class="twitter"><a target="_blank" rel="nofollow"
+                                             onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
+                                             title="Twitter"
+                                             href="https://twitter.com/share?url=http://samaloney.com/fix-error-when-plotting-from-idl-85.html&text=Fix error when plotting from IDL 8.5&via=samaloney"><img
+                            src="http://samaloney.com/theme/images/icons/twitter-s.png"></a></span>
+
+                    <span class="gplus"><a target="_blank" title="Google +"
+                                           href="https://plus.google.com/share?url=http://samaloney.com/fix-error-when-plotting-from-idl-85.html&hl=fr"
+                                           rel="nofollow"
+                                           onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
+                            src="http://samaloney.com/theme/images/icons/google-s.png"></a></span>
+
+                    <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
+                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
+                                              href="https://www.facebook.com/sharer.php?u=http://samaloney.com/fix-error-when-plotting-from-idl-85.html&t=Fix error when plotting from IDL 8.5"><img
+                            src="http://samaloney.com/theme/images/icons/facebook-s.png"></a></span>
+
+                    <a target="_blank" title="Linkedin"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=http://samaloney.com/fix-error-when-plotting-from-idl-85.html&title=Fix error when plotting from IDL 8.5"
+                       rel="nofollow"
+                       onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
+                            src="http://samaloney.com/theme/images/icons/linkedin-s.png"></a>
+
+                    <span class="mail"><a
+                            href="mailto:?subject=Fix error when plotting from IDL 8.5&amp;body=Viens découvrir un article à propos de [Fix error when plotting from IDL 8.5] sur le site de Shane Maloney. http://samaloney.com/fix-error-when-plotting-from-idl-85.html"
+                            title="Share by Email" target="_blank"><img
+                            src="http://samaloney.com/theme/images/icons/mail-s.png"></a></span>
+                </div>
+            </div>
+        </article>
+    </section>
+</article>
+
+<!-- Footer -->
+
+
+</body>
+</html>
