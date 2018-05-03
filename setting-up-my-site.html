@@ -17,11 +17,11 @@
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
         <!-- Style Meta Data -->
-        <link rel="stylesheet" href="http://samaloney.com/theme/css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="http://samaloney.com/theme/css/pygments.css" type="text/css"/>
+        <link rel="stylesheet" href="https://samaloney.com/theme/css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://samaloney.com/theme/css/pygments.css" type="text/css"/>
 
         <!-- Feed Meta Data -->
-            <link href="http://samaloney.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+            <link href="https://samaloney.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
                   title="samaloney ATOM Feed"/>
 
         <!-- Twitter Feed -->
@@ -30,7 +30,7 @@
         <meta name="twitter:image" content="">
 
     <meta name="twitter:creator" content="samaloney">
-    <meta name="twitter:url" content="http://samaloney.com/setting-up-my-site.html">
+    <meta name="twitter:url" content="https://samaloney.com/setting-up-my-site.html">
     <meta name="twitter:title" content="samaloney ~ Setting Up My Site">
     <meta name="twitter:description" content="Creating my personal website.">
 
@@ -43,7 +43,7 @@
 <body>
 <!-- Sidebar -->
 <aside>
-    <center><a href="http://samaloney.com"><img id="avatar" src="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg"></a></center>
+    <center><a href="https://samaloney.com"><img id="avatar" src="https://pbs.twimg.com/profile_images/879771897650479104/IW1qXFlU_400x400.jpg"></a></center>
     <h1>samaloney</h1>
         <p>Solar Physics, Programming, Technology</p>
     <br>
@@ -73,32 +73,32 @@
     <nav class="nav">
         <ul class="list-bare">
 
-                <li><a class="nav__link" href="http://samaloney.com">Home</a></li>
-                <li><a class="nav__link" href="http://samaloney.com/category/blog.html">Blog</a></li>
+                <li><a class="nav__link" href="https://samaloney.com">Home</a></li>
+                <li><a class="nav__link" href="https://samaloney.com/category/blog.html">Blog</a></li>
 
-                <li><a class="nav__link" href="http://samaloney.com/pages/about.html">About</a></li>
-                <li><a class="nav__link" href="http://samaloney.com/pages/publications.html">Publications</a></li>
+                <li><a class="nav__link" href="https://samaloney.com/pages/about.html">About</a></li>
+                <li><a class="nav__link" href="https://samaloney.com/pages/publications.html">Publications</a></li>
 
         </ul>
     </nav>
 
     <p class="social">
                 <a href="https://www.linkedin.com/in/samaloney" target="_blank"><img
-                        src="http://samaloney.com/theme/images/icons/linkedin.png"></a>
+                        src="https://samaloney.com/theme/images/icons/linkedin.png"></a>
                 <a href="https://github.com/samaloney" target="_blank"><img
-                        src="http://samaloney.com/theme/images/icons/github.png"></a>
+                        src="https://samaloney.com/theme/images/icons/github.png"></a>
                 <a href="https://twitter.com/samaloney" target="_blank"><img
-                        src="http://samaloney.com/theme/images/icons/twitter.png"></a>
-            <a href="http://samaloney.com/feeds/all.atom.xml" rel="alternate">
-                <img src="http://samaloney.com/theme/images/icons/rss.png"></a>
+                        src="https://samaloney.com/theme/images/icons/twitter.png"></a>
+            <a href="https://samaloney.com/feeds/all.atom.xml" rel="alternate">
+                <img src="https://samaloney.com/theme/images/icons/rss.png"></a>
     </p>
 
         <h2>Categories</h2>
         <ul class="navbar">
                 <li class="active"><a
-                        href="http://samaloney.com/category/blog.html">Blog</a></li>
+                        href="https://samaloney.com/category/blog.html">Blog</a></li>
                 <li><a
-                        href="http://samaloney.com/category/how-to.html">How To</a></li>
+                        href="https://samaloney.com/category/how-to.html">How To</a></li>
         </ul>
 
         <h2 class="blog_roll_link"><br/>BLOGROLLS</h2>
@@ -114,7 +114,7 @@
 <article>
     <section id="content">
         <article>
-            <h2 class="post_title post_detail"><a href="http://samaloney.com/setting-up-my-site.html" rel="bookmark"
+            <h2 class="post_title post_detail"><a href="https://samaloney.com/setting-up-my-site.html" rel="bookmark"
                                                   title="Permalink to Setting Up My Site">Setting Up My Site</a></h2>
             <div class="entry-content blog-post">
                 <h2>Preamble</h2>
@@ -128,7 +128,7 @@
 <li>Smaller community but seems a bit less complex so will be easier to hack</li>
 </ol>
 <h2>Lets go!</h2>
-<p>So my first step was to create a isolated environment (pyenv and virtualenv) and get Pelican installed</p>
+<p>My first step was to create a isolated environment (pyenv and virtualenv) and get Pelican installed</p>
 <div class="highlight"><pre><span></span>mkproject -python3 samloney.com
 pip install pelican
 pelican-quickstart
@@ -174,7 +174,7 @@ pelican-quickstart
 </pre></div>
 
 
-<p>It turned out the the pelican_publications plugin didn't quite do what I expected/wanted which made the template more complicated then I wanted, a task for the future, it was good enough for the moment.</p>
+<p>It turned out the pelican_publications plugin didn't do what I expected/wanted which made the template more complicated then I wanted, a task for the future, it was good enough for the moment.</p>
 <h2>Time to Publish</h2>
 <p>At this point I figured I might as well try publishing what I had so far so I created a repo with the correct name following the GitHub pages <a href="https://pages.github.com">instructions</a>. I ran <code>make publish</code> which runs pelican with <code>pelicanconf.py</code> and additionally <code>publishconf.py</code> where I set the site name to my github pages url. As suggested in the pelican doc I had installed ghp-import so all I had to do was</p>
 <div class="highlight"><pre><span></span>ghp-import &lt;path&gt;/&lt;to&gt;/output
@@ -182,60 +182,60 @@ git push orgin gh-pages
 </pre></div>
 
 
-<p>and it didn't work a quick review of the GitHub Pages docs seem to indicate user pagaes now had to be in the master branch. Second try</p>
+<p>and it didn't work a quick review of the GitHub Pages docs indicated user pages now had to be in the master branch. Second try</p>
 <div class="highlight"><pre><span></span>ghp-import -b master &lt;path&gt;/&lt;to&gt;/output
 git push orgin master
 </pre></div>
 
 
-<p>it worked will kind of, the home page seemed ok, missing some css but every other page was borked. A quick review of browser console indicated issues serving mixed content (http, https) and the links were not being generated correctly. After a bit of playing around I found the causes:</p>
+<p>it worked will kind of, the home page seemed ok, missing some css but every other page was borked. A quick review of browser console indicated issues serving mixed content (http, https) and the links were not generated properly. After a bit of playing around I found the causes:</p>
 <ol>
 <li>RTFM - from pelican docs <code>SITEURL</code> must be full URL with protocol</li>
 <li>Also with the theme I was using <code>SITEURL</code> had at the start of <code>pelicanconf.py</code> and didn't work when set in <code>publishconf.py</code></li>
 </ol>
 <p>Success!</p>
-<p>The code for the site at this stage can be found <a href="">here</a></p>
+<p>The code for the site at this stage is <a href="https://github.com/samaloney/samaloney.github.io-src">here</a></p>
             </div>
             <div class="post_list">
                 <span>By </span>
-                <a href="http://samaloney.com/author/shane-maloney.html">@Shane Maloney</a>
+                <a href="https://samaloney.com/author/shane-maloney.html">@Shane Maloney</a>
                 <span> in </span>
-                <span class="post_category"><a href="http://samaloney.com/category/blog.html" rel="bookmark"
+                <span class="post_category"><a href="https://samaloney.com/category/blog.html" rel="bookmark"
                                                title="Permalink to Blog">[ Blog ]</a></span>
                 <span class="post_date">Sun 21 January 2018</span>
                 <div><span>Tags : </span>
-                            <span><a href="http://samaloney.com/tag/pelican.html">#pelican, </a></span>
-                            <span><a href="http://samaloney.com/tag/publishing.html">#publishing, </a></span>
+                            <span><a href="https://samaloney.com/tag/pelican.html">#pelican, </a></span>
+                            <span><a href="https://samaloney.com/tag/publishing.html">#publishing, </a></span>
                 </div>
 
                 <div class="entry-social">
                     <span class="twitter"><a target="_blank" rel="nofollow"
                                              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;"
                                              title="Twitter"
-                                             href="https://twitter.com/share?url=http://samaloney.com/setting-up-my-site.html&text=Setting Up My Site&via=samaloney"><img
-                            src="http://samaloney.com/theme/images/icons/twitter-s.png"></a></span>
+                                             href="https://twitter.com/share?url=https://samaloney.com/setting-up-my-site.html&text=Setting Up My Site&via=samaloney"><img
+                            src="https://samaloney.com/theme/images/icons/twitter-s.png"></a></span>
 
                     <span class="gplus"><a target="_blank" title="Google +"
-                                           href="https://plus.google.com/share?url=http://samaloney.com/setting-up-my-site.html&hl=fr"
+                                           href="https://plus.google.com/share?url=https://samaloney.com/setting-up-my-site.html&hl=fr"
                                            rel="nofollow"
                                            onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
-                            src="http://samaloney.com/theme/images/icons/google-s.png"></a></span>
+                            src="https://samaloney.com/theme/images/icons/google-s.png"></a></span>
 
                     <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow"
                                               onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;"
-                                              href="https://www.facebook.com/sharer.php?u=http://samaloney.com/setting-up-my-site.html&t=Setting Up My Site"><img
-                            src="http://samaloney.com/theme/images/icons/facebook-s.png"></a></span>
+                                              href="https://www.facebook.com/sharer.php?u=https://samaloney.com/setting-up-my-site.html&t=Setting Up My Site"><img
+                            src="https://samaloney.com/theme/images/icons/facebook-s.png"></a></span>
 
                     <a target="_blank" title="Linkedin"
-                       href="https://www.linkedin.com/shareArticle?mini=true&url=http://samaloney.com/setting-up-my-site.html&title=Setting Up My Site"
+                       href="https://www.linkedin.com/shareArticle?mini=true&url=https://samaloney.com/setting-up-my-site.html&title=Setting Up My Site"
                        rel="nofollow"
                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img
-                            src="http://samaloney.com/theme/images/icons/linkedin-s.png"></a>
+                            src="https://samaloney.com/theme/images/icons/linkedin-s.png"></a>
 
                     <span class="mail"><a
-                            href="mailto:?subject=Setting Up My Site&amp;body=Viens découvrir un article à propos de [Setting Up My Site] sur le site de Shane Maloney. http://samaloney.com/setting-up-my-site.html"
+                            href="mailto:?subject=Setting Up My Site&amp;body=Viens découvrir un article à propos de [Setting Up My Site] sur le site de Shane Maloney. https://samaloney.com/setting-up-my-site.html"
                             title="Share by Email" target="_blank"><img
-                            src="http://samaloney.com/theme/images/icons/mail-s.png"></a></span>
+                            src="https://samaloney.com/theme/images/icons/mail-s.png"></a></span>
                 </div>
             </div>
         </article>
