@@ -300,41 +300,7 @@ if (outputEl) {{
                 };
                 });
             &lt;/script&gt;
-        &lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Int64Index([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], dtype=&amp;#39;int64&amp;#39;)
-
-
-
-
-
-
-(array([0.20164862, 4.79054959]),
- array([3.94491127e+00, 1.43724560e+01, 4.44565128e+03]))
-
-
-
-
----------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&amp;amp;lt;ipython-input-20-51ebe0db4d90&amp;amp;gt; in &amp;amp;lt;module&amp;amp;gt;
-      2 fig = go.Figure()
-      3 fig.add_trace(go.Scatter(x=(x-x[0]).days+1, y=y, name=&amp;#39;Ireland&amp;#39;))
-----&amp;amp;gt; 4 fig.add_trace(go.Scatter(x=x_fit+x[0], y=logistic_model(x_fit, *pl), name=&amp;#39;Logistic&amp;#39;))
-      5 fig.add_trace(go.Scatter(x=x_fit, y=np.exp(np.polyval(pe, x_fit)), name=&amp;#39;Exp&amp;#39;))
-      6 fig.update_layout(yaxis_type=&amp;#39;log&amp;#39;)
-
-
-pandas/_libs/tslibs/timestamps.pyx in pandas._libs.tslibs.timestamps.Timestamp.__radd__()
-
-
-pandas/_libs/tslibs/c_timestamp.pyx in pandas._libs.tslibs.c_timestamp._Timestamp.__add__()
-
-
-TypeError: Addition/subtraction of integers and integer-arrays with Timestamp is no longer supported.  Instead of adding/subtracting `n`, use `n * obj.freq`
-&lt;/pre&gt;&lt;/div&gt;</content><category term="Blog"></category></entry><entry><title>Setting Up My Site</title><link href="https://samaloney.com/setting-up-my-site.html" rel="alternate"></link><published>2018-01-21T20:42:00+00:00</published><updated>2018-01-21T20:42:00+00:00</updated><author><name>Shane Maloney</name></author><id>tag:samaloney.com,2018-01-21:/setting-up-my-site.html</id><summary type="html">&lt;p&gt;Creating my personal website.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Preamble&lt;/h2&gt;
+        &lt;/div&gt;</content><category term="Blog"></category></entry><entry><title>Setting Up My Site</title><link href="https://samaloney.com/setting-up-my-site.html" rel="alternate"></link><published>2018-01-21T20:42:00+00:00</published><updated>2018-01-21T20:42:00+00:00</updated><author><name>Shane Maloney</name></author><id>tag:samaloney.com,2018-01-21:/setting-up-my-site.html</id><summary type="html">&lt;p&gt;Creating my personal website.&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Preamble&lt;/h2&gt;
 &lt;p&gt;I've been putting off setting up a personal website for far too long. In the past I've looked at various options for creating a personal site such as, &lt;a href="https://www.wordpress.org"&gt;WordPress&lt;/a&gt;, &lt;a href="https://jekyllrb.com"&gt;Jekyll&lt;/a&gt;, &lt;a href="https://gohugo.io"&gt;Hugo&lt;/a&gt; but none of them really seemed to suite my needs.&lt;/p&gt;
 &lt;p&gt;WordPress is great and I'm familiar with using it however, it seems a bit of overkill for my purposes. I don't really need dynamic server side functions and I would have to host it somewhere, not a big deal by why bother when it's not necessary.As I don't need any dynamic content I decided to look at static site generators. Also static sites can be hosted on GitHub via &lt;a href="https://pages.github.com"&gt;GitHub pages&lt;/a&gt;, one less thing to manage.&lt;/p&gt;
 &lt;p&gt;Jekyll seems to be one of the most popular and well supported, it has lots of nice themes, plugins and is even integrated with GitHub pages. However it is written in &lt;a href="https://www.ruby-lang.org/en/"&gt;Ruby&lt;/a&gt;, which I'm not too familiar with same goes for its template language &lt;a href="https://shopify.github.io/liquid/"&gt;Liquid&lt;/a&gt;. Next up Hugo another very popular static site generator with good support and lots of nice themes. Hugo is written in Go, which I'm not that familiar with, or Go's template system.&lt;/p&gt;

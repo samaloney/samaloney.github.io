@@ -409,40 +409,6 @@ if (outputEl) {{
                 });
             </script>
         </div>
-
-<div class="highlight"><pre><span></span>Int64Index([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], dtype=&#39;int64&#39;)
-
-
-
-
-
-
-(array([0.20164862, 4.79054959]),
- array([3.94491127e+00, 1.43724560e+01, 4.44565128e+03]))
-
-
-
-
----------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&amp;lt;ipython-input-20-51ebe0db4d90&amp;gt; in &amp;lt;module&amp;gt;
-      2 fig = go.Figure()
-      3 fig.add_trace(go.Scatter(x=(x-x[0]).days+1, y=y, name=&#39;Ireland&#39;))
-----&amp;gt; 4 fig.add_trace(go.Scatter(x=x_fit+x[0], y=logistic_model(x_fit, *pl), name=&#39;Logistic&#39;))
-      5 fig.add_trace(go.Scatter(x=x_fit, y=np.exp(np.polyval(pe, x_fit)), name=&#39;Exp&#39;))
-      6 fig.update_layout(yaxis_type=&#39;log&#39;)
-
-
-pandas/_libs/tslibs/timestamps.pyx in pandas._libs.tslibs.timestamps.Timestamp.__radd__()
-
-
-pandas/_libs/tslibs/c_timestamp.pyx in pandas._libs.tslibs.c_timestamp._Timestamp.__add__()
-
-
-TypeError: Addition/subtraction of integers and integer-arrays with Timestamp is no longer supported.  Instead of adding/subtracting `n`, use `n * obj.freq`
-</pre></div>
   </div>
   <div class="tag-cloud">
     <p>
